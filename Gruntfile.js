@@ -107,7 +107,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-ftp-deploy');
 
   grunt.registerTask('serve', ['connect', 'open', 'watch']);
-  grunt.registerTask('build', ['htmlmin', 'cssmin', 'uglify']);
+  grunt.registerTask('build', ['htmlmin', 'sass', 'cssmin', 'uglify']);
   grunt.registerTask('deploy', ['ftp-deploy']);
 
 };

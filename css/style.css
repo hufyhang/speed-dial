@@ -65,6 +65,11 @@ body {
     border: 2px solid #655a84;
     background: #655a84;
     color: #fff; }
+  #search-form #search-input {
+    padding-left: 15px;
+    border-radius: 20px 0 0 20px; }
+  #search-form #search-submit {
+    border-radius: 0 20px 20px 0; }
 
 .hidden {
   display: none !important; }
