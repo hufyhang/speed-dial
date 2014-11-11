@@ -1,0 +1,99 @@
+$bgColor: #101317;
+$fgColor: #655a84;
+$boxBg: #fff;
+
+// $boxWidth: 250px;
+// $boxHeight: 100px;
+
+$boxWidth: 100%;
+$boxHeight: 100px;
+
+body {
+  background: $bgColor;
+  color: $fgColor;
+  font-weight: lighter;
+}
+
+.dial-container {
+  padding: 5px 5px;
+}
+
+.dial-instance, .dial-instance:hover {
+  display: block;
+  background: $boxBg;
+  padding: 10px;
+  border: 2px solid $fgColor;
+  border-radius: 6px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+
+  text-decoration: none;
+
+  .dial-img {
+    max-width: $boxWidth;
+    height: $boxHeight;
+  }
+
+  .dial-name {
+    text-align: center;
+    text-decoration: none;
+    color: $fgColor;
+  }
+}
+
+#add-btn {
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  line-height: 160px;
+  transition: all 0.3s ease-in-out;
+}
+
+#add-btn-content {
+  height: $boxHeight + 50px;
+  border: 2px solid $fgColor;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+#add-btn-content:hover {
+  background: $fgColor;
+  color: #fff;
+}
+
+#save-btn {
+  cursor: pointer;
+  text-align: center;
+  color: $fgColor;
+  border: 2px solid $fgColor;
+  border-radius: 6px;
+  margin: 10px;
+  user-select: none;
+  transition: all 0.3s ease-in-out;
+}
+
+#save-btn:hover {
+  background: $fgColor;
+  color: #fff;
+}
+
+#search-form {
+  margin: 15px auto;
+
+  * {
+    border-radius: 0px;
+  }
+
+  input[type=submit] {
+    border: 2px solid $fgColor;
+    background: $fgColor;
+    color: #fff;
+  }
+}
+
+.hidden {
+  display: none !important;
+}

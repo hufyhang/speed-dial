@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speed Dial</title>
+  <meta name="description" content="Customize your own speed dial page with JSON.">
+  <meta name="keywords" content="speed dial,dial,ChopJS,JSON,customize,homepage">
+  <meta name="author" content="Feifei Hang">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/chopjs-ui-style.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body ch-init="dials = [];">
+  <form id="search-form" class="ch-row ch-align-center" action="http://www.google.com/search" method="get">
+    <input class="ch-xs-9 ch-sm-9" type="text" name="q" placeholder="Search..." autofocus>
+    <input type="submit" class="ch-xs-2 ch-sm-2" value="Search">
+  </form>
+  <div class="ch-row" id="dials-div">
+  </div>
+
+
+  <script src="js/chop.min.js" ch-main="js/main.js"></script>
+
+  <script type="text/template" id="dials-template">
+    <div class="dial-container ch-xs-6 ch-sm-4 ch-md-3">
+      <a class="dial-instance" href="{{url}}">
+        <img class="dial-img" src="{{img}}" alt="{{name}} Logo">
+        <div class="dial-name">{{name}}</div>
+      </a>
+    </div>
+  </script>
+
+  <script type="text/template" id="add-btn-template">
+   <div id="add-btn" class="ch-xs-6 ch-sm-4 ch-md-3" ch-click="$ch.router.navigate('setting');">
+    <div id="add-btn-content">
+      <i class="fa fa-cogs fa-3x"></i>
+    </div>
+   </div>
+  </script>
+
+  <script type="text/template" id="setting-template">
+    <textarea id="setting-area" rows="20" class="ch-xs-10 ch-sm-10"></textarea>
+    <div id="save-btn" ch-click="$ch.event.emit('save');" class="ch-xs-3 ch-sm-3"><i class="fa fa-floppy-o fa-3x"></i></div>
+  </script>
+</body>
+</html>
