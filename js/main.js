@@ -61,7 +61,7 @@ $ch.require(['node', 'event', 'store', 'layout', 'string', './router'], function
         $ch.store.local(LOCAL_STORE, code);
         $ch.router.navigate('home');
       } catch (err) {
-        alert('Invalid JSON setting.');
+        alert(err.message);
         console.log(err);
       }
     }
