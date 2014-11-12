@@ -106,3 +106,21 @@ body {
 .hidden {
   display: none !important;
 }
+
+#editor-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+
+  .CodeMirror {
+    position: relative;
+    margin: 20px;
+    height: 80%;
+  }
+
+  #message-div {
+    color: #d10002;
+    text-align: center;
+  }
+}

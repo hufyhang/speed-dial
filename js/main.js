@@ -1,4 +1,4 @@
-/* global $ch */
+/* global $ch, CodeMirror */
 var LOCAL_STORE = 'dials';
 $ch.require(['node', 'event', 'store', 'layout', 'string', './router'], function () {
   'use strict';
@@ -51,17 +51,24 @@ $ch.require(['node', 'event', 'store', 'layout', 'string', './router'], function
     });
     var json = buffer.toString('');
     json = json.substr(0, json.length - 1);
-    $ch.find('#setting-area').val('[' + json + '\n]');
+    var editor = $ch.find('#setting-area');
+    editor.val('[' + json + '\n]');
+    editor = CodeMirror.fromTextArea(editor.el, {
+      lineNumbers: true,
+      matchBrackets: true,
+      continueComments: 'Enter'
+    });
+    $ch.source('editor', editor);
   })
   .listen('save', function () {
-    var code = $ch.find('#setting-area').val().trim();
+    var code = $ch.source('editor').getValue().trim();
     if (code.length !== 0) {
       try {
         code = JSON.parse(code);
         $ch.store.local(LOCAL_STORE, code);
         $ch.router.navigate('home');
       } catch (err) {
-        alert(err.message);
+        $ch.find('#message-div').html('Error: ' + err.message);
         console.log(err);
       }
     }
