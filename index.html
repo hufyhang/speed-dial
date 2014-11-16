@@ -15,16 +15,16 @@
   <link rel="stylesheet" href="css/codemirror.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body ch-init="dials = [];">
-  <form id="search-form" class="ch-row ch-align-center" action="http://www.google.com/search" method="get">
-    <input id="search-input" class="ch-xs-7 ch-sm-9" type="text" name="q" placeholder="Search..." autofocus>
+<body ch-scope="dialScope" ch-init="dials = [];">
+  <form id="search-form" class="ch-row ch-align-center" action="http://www.google.com/search" method="get" ch-name="form">
+    <input id="search-input" class="ch-xs-7 ch-sm-9" type="text" name="q" placeholder="Search..." autofocus ch-name="input">
     <input id="search-submit" type="submit" class="ch-xs-4 ch-sm-2" value="Search">
   </form>
-  <div class="ch-row" id="dials-div">
+  <div class="ch-row" id="dials-div" ch-name="dialsDiv">
   </div>
 
 
-  <script type="text/template" id="dials-template">
+  <script type="text/template" id="dials-template" ch-name="dialsTemplate">
     <div class="dial-container ch-xs-6 ch-sm-4 ch-md-3">
       <a class="dial-instance" href="{{url}}">
         <img class="dial-img" src="{{img}}" alt="{{name}} Logo">
@@ -33,7 +33,7 @@
     </div>
   </script>
 
-  <script type="text/template" id="add-btn-template">
+  <script type="text/template" id="add-btn-template" ch-name="addBtnTemplate">
    <div id="add-btn" class="ch-xs-6 ch-sm-4 ch-md-3" ch-click="$ch.router.navigate('setting');">
     <div id="add-btn-content">
       <i class="fa fa-cogs fa-3x"></i>
@@ -41,10 +41,10 @@
    </div>
   </script>
 
-  <script type="text/template" id="setting-template">
+  <script type="text/template" id="setting-template" ch-name="settingTemplate">
     <div id="editor-wrapper" class="ch-row ch-align-center">
-      <textarea id="setting-area" rows="30" class="ch-xs-10 ch-sm-10"></textarea>
-      <div id="message-div" class="ch-xs-10 ch-sm-10"></div>
+      <textarea id="setting-area" rows="30" class="ch-xs-10 ch-sm-10" ch-name="settingArea"></textarea>
+      <div id="message-div" class="ch-xs-10 ch-sm-10" ch-name="messageDiv"></div>
       <div id="save-btn" ch-click="$ch.event.emit('save');" class="ch-xs-3 ch-sm-3"><i class="fa fa-floppy-o fa-3x"></i></div>
     </div>
   </script>

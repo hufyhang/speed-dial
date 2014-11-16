@@ -78,6 +78,7 @@ module.exports = function (grunt) {
         files: {
           'dist/js/main.js': ['js/main.js'],
           'dist/js/router.js': ['js/router.js'],
+          'dist/js/scope.js': ['js/scope.js'],
           'dist/js/chop.min.js': ['js/chop.min.js'],
           'dist/js/javascript.js': ['js/javascript.js'],
           'dist/js/codemirror.js': ['js/codemirror.js']
